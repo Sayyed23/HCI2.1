@@ -1,271 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Details - Luxe Lane</title>
+    <title>Product Details</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .product-details {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
-        }
-
-        .product-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            padding: 2rem;
-        }
-
-        .product-images {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .main-image-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .main-image {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .main-image:hover {
-            transform: scale(1.05);
-        }
-
-        .thumbnail-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-        }
-
-        .thumbnail {
-            width: 100%;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-            border: 2px solid transparent;
-        }
-
-        .thumbnail:hover {
-            transform: translateY(-3px);
-            border-color: #000;
-        }
-
-        .product-info {
-            padding: 1rem;
-        }
-
-        .back-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background-color: transparent;
-            border: none;
-            color: #000;
-            cursor: pointer;
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            transition: transform 0.2s ease;
-        }
-
-        .back-button:hover {
-            transform: translateX(-5px);
-        }
-
-        .product-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #000;
-            font-weight: 600;
-        }
-
-        .product-price {
-            font-size: 2rem;
-            color: #000;
-            margin-bottom: 1.5rem;
-            font-weight: 500;
-        }
-
-        .product-description {
-            margin-bottom: 2rem;
-            line-height: 1.8;
-            color: #333;
-            font-size: 1.1rem;
-        }
-
-        .add-to-cart {
-            background-color: #000;
-            color: white;
-            padding: 1.2rem 2.5rem;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            width: 100%;
-            margin-bottom: 2rem;
-        }
-
-        .add-to-cart:hover {
-            background-color: #333;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .product-details-list {
-            background-color: #f8f8f8;
-            padding: 2rem;
-            border-radius: 8px;
-        }
-
-        .product-details-list dt {
-            font-weight: 600;
-            margin-top: 1.5rem;
-            font-size: 1.2rem;
-            color: #000;
-        }
-
-        .product-details-list dd {
-            margin-left: 0;
-            margin-bottom: 1rem;
-            color: #444;
-            line-height: 1.6;
-        }
-
-        .product-details-list ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .product-details-list li {
-            margin-bottom: 0.5rem;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .product-details-list li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #000;
-        }
-
-        @media (max-width: 768px) {
-            .product-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .main-image {
-                height: 350px;
-            }
-        }
-
-        /* New styles for the product actions */
-        .product-actions {
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2rem;
-        }
-
-        .quantity-selector {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .quantity-selector label {
-            font-weight: 500;
-        }
-
-        .quantity-selector input {
-            width: 60px;
-            padding: 0.5rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            text-align: center;
-        }
-
-        .button-group {
-            display: grid;
-            gap: 1rem;
-        }
-
-        .add-to-cart {
-            background-color: #000;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-
-        .buy-now {
-            background-color: #4CAF50;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-
-        .add-to-cart:hover, .buy-now:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .availability {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .availability-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #4CAF50;
-            border-radius: 50%;
-        }
-
-        .delivery-info {
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #eee;
-        }
-
-        .delivery-info p {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
-            color: #666;
-        }
-    </style>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
     <!-- Header Section -->
     <header>
@@ -279,6 +23,7 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">Cart</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="signin.html">Sign In</a></li>
                 <li><a href="register.html">Register</a></li>
@@ -286,152 +31,145 @@
         </nav>
     </header>
 
-    <!-- Product Details Section -->
     <main>
         <section class="product-details">
-            <button onclick="window.history.back()" class="back-button">
-                ← Back to Products
-            </button>
-            
-            <div class="product-container">
-                <div class="product-images">
-                    <div class="main-image-container">
-                        <img src="rolex.jpeg" alt="Product Main Image" class="main-image" id="mainImage">
-                    </div>
-                    <div class="thumbnail-grid">
-                        <img src="rolex.jpeg" alt="Product Thumbnail 1" class="thumbnail" onclick="updateMainImage(this.src)">
-                        <img src="rolex2.jpeg" alt="Product Thumbnail 2" class="thumbnail" onclick="updateMainImage(this.src)">
-                        <img src="rolex3.jpeg" alt="Product Thumbnail 3" class="thumbnail" onclick="updateMainImage(this.src)">
-                        <img src="rolex4.jpeg" alt="Product Thumbnail 4" class="thumbnail" onclick="updateMainImage(this.src)">
-                    </div>
-                </div>
+            <img id="product-image" src="" alt="Product Image">
+            <h1 id="product-name"></h1>
+            <p id="product-description"></p>
+            <p class="price" id="product-price"></p>
 
-                <div class="product-info">
-                    <h1 class="product-title">Rolex Oyster Perpetual Day-Date 31</h1>
-                    <p class="product-price">$999</p>
-                    
-                    <div class="product-actions">
-                        <div class="availability">
-                            <span class="availability-dot"></span>
-                            <span>In Stock</span>
-                        </div>
-
-                        <div class="quantity-selector">
-                            <label for="quantity">Quantity:</label>
-                            <input type="number" id="quantity" value="1" min="1" max="10">
-                        </div>
-
-                        <div class="button-group">
-                            <button class="add-to-cart" onclick="addToCart()">
-                                Add to Cart
-                            </button>
-                            <button class="buy-now" onclick="buyNow()">
-                                Buy Now
-                            </button>
-                        </div>
-
-                        <div class="delivery-info">
-                            <p>📦 Free Shipping Worldwide</p>
-                            <p>🔒 Secure Payment</p>
-                            <p>↩️ 30-Day Returns</p>
-                            <p>✨ Authenticity Guaranteed</p>
-                        </div>
-                    </div>
-
-                    <div class="product-description">
-                        <p>Experience luxury at its finest with this exquisite timepiece. The Rolex Oyster Perpetual Day-Date 31 combines elegant design with precision engineering, representing the pinnacle of watchmaking excellence.</p>
-                    </div>
-
-                    <dl class="product-details-list">
-                        <dt>Product Details</dt>
-                        <dd>
-                            <ul>
-                                <li>Material: 18k Yellow Gold</li>
-                                <li>Movement: Automatic self-winding</li>
-                                <li>Water Resistance: 100m (330ft)</li>
-                                <li>Case Size: 31mm</li>
-                                <li>Crystal: Scratch-resistant sapphire</li>
-                                <li>Bracelet: President, 18k yellow gold</li>
-                            </ul>
-                        </dd>
-
-                        <dt>Shipping Information</dt>
-                        <dd>Free express shipping worldwide with insurance and tracking. Delivery within 2-3 business days.</dd>
-
-                        <dt>Returns Policy</dt>
-                        <dd>30-day returns for unworn items in original condition with all tags and packaging intact. Free returns shipping.</dd>
-                    </dl>
-                </div>
+            <div class="actions">
+                <button onclick="addToCart()">Add to Cart</button>
+                <button onclick="goBack()">Back to Shop</button>
             </div>
         </section>
     </main>
 
-    <!-- Footer Section -->
-    <footer>
-        <div class="footer-content">
-            <div class="use-cases">
-                <h3>Use cases</h3>
-                <ul>
-                    <li>Private event invitation</li>
-                    <li>Luxury Concierge Services</li>
-                    <li>Personalized shopping</li>
-                    <li>VIP treatment</li>
-                    <li>Special showcases</li>
-                </ul>
-            </div>
-            <div class="explore">
-                <h3>Explore</h3>
-                <ul>
-                    <li>Design</li>
-                    <li>Principles</li>
-                    <li>Development</li>
-                    <li>Design systems</li>
-                    <li>Collaboration patterns</li>
-                </ul>
-            </div>
-            <div class="follow-us">
-                <h3>Follow us</h3>
-                <ul>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Twitter</a></li>
-                </ul>
-            </div>
-            <div class="contact-info">
-                <h3>Contact Info</h3>
-                <p>Email: contact@luxelane.com</p>
-                <p>Phone: +1-234-567-890</p>
-            </div>
-        </div>
-    </footer>
-
     <script>
-        function updateMainImage(src) {
-            const mainImage = document.getElementById('mainImage');
-            mainImage.style.opacity = '0';
-            setTimeout(() => {
-                mainImage.src = src;
-                mainImage.style.opacity = '1';
-            }, 200);
-        }
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-        // Add active state to thumbnails
-        document.querySelectorAll('.thumbnail').forEach(thumb => {
-            thumb.addEventListener('click', function() {
-                document.querySelectorAll('.thumbnail').forEach(t => t.style.borderColor = 'transparent');
-                this.style.borderColor = '#000';
-            });
-        });
+        const products = {
+            rolex: {
+                name: "Rolex Oyster Perpetual Day-Date 31",
+                description: "A classic luxury watch known for its precision and elegance.",
+                price: "$999",
+                image: "rolex.jpeg"
+            },
+            airjordan: {
+                name: "Air Jordan 1 Mid",
+                description: "An iconic sneaker that blends comfort with a timeless design.",
+                price: "$800",
+                image: "images.jpeg"
+            },
+            gucci: {
+                name: "Gucci GG Supreme Bag",
+                description: "A stylish and spacious handbag crafted from premium materials.",
+                price: "$500",
+                image: "product-jpeg.jpg"
+            },
+            adidas: {
+                name: "Adidas SST Track Jacket",
+                description: "A classic track jacket with a modern twist.",
+                price: "$200",
+                image: "images (3).jpeg"
+            },
+            nike: {
+                name: "Nike's self-lacing basketball shoes '77",
+                description: "Innovative self-lacing shoes for the modern athlete.",
+                price: "$700",
+                image: "images (1).jpeg"
+            },
+            samsung: {
+                name: "Samsung Galaxy S21",
+                description: "A powerful smartphone with cutting-edge features.",
+                price: "$1200",
+                image: "Samsung Galaxy S21.webp"
+            },
+            polo: {
+                name: "Polo Ralph Lauren Shirt",
+                description: "A timeless shirt from Polo Ralph Lauren.",
+                price: "$150",
+                image: "Polo Ralph Lauren Shirt.webp"
+            },
+            louisvuitton: {
+                name: "Louis Vuitton Tote Bag",
+                description: "A luxurious tote bag from Louis Vuitton.",
+                price: "$1800",
+                image: "Louis Vuitton Tote Bag.jpg"
+            },
+            sony: {
+                name: "Sony Bravia 65-inch TV",
+                description: "A stunning 65-inch TV with exceptional picture quality.",
+                price: "$2000",
+                image: "Sony Bravia 65-inch TV.webp"
+            },
+            apple: {
+                name: "Apple iPhone 13 Pro",
+                description: "The latest iPhone with advanced features.",
+                price: "$1300",
+                image: "Apple iPhone 13 Pro.jpg"
+            },
+            chanel: {
+                name: "Chanel Classic Handbag",
+                description: "An iconic handbag from Chanel.",
+                price: "$3000",
+                image: "Chanel Classic Handbag.jpeg"
+            },
+            example: {
+                name: "Example Product",
+                description: "An example product description.",
+                price: "$1000",
+                image: "example-product.jpg"
+            }
+        };
+
+        function loadProductDetails() {
+            const params = new URLSearchParams(window.location.search);
+            const productKey = params.get("product");
+
+            if (productKey && products[productKey]) {
+                const product = products[productKey];
+                document.getElementById("product-image").src = product.image;
+                document.getElementById("product-name").textContent = product.name;
+                document.getElementById("product-description").textContent = product.description;
+                document.getElementById("product-price").textContent = product.price;
+            } else {
+                document.querySelector(".product-details").innerHTML = "<p>Product not found.</p>";
+            }
+        }
 
         function addToCart() {
-            alert('Product added to cart!');
-            // Add your cart functionality here
+            const params = new URLSearchParams(window.location.search);
+            const productKey = params.get("product");
+
+            if (productKey && products[productKey]) {
+                const product = products[productKey];
+                const existingProductIndex = cart.findIndex(item => item.name === product.name);
+
+                if (existingProductIndex !== -1) {
+                    cart[existingProductIndex].quantity += 1;
+                } else {
+                    cart.push({
+                        name: product.name,
+                        price: parseFloat(product.price.replace('$', '')),
+                        quantity: 1,
+                        image: product.image
+                    });
+                }
+
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert('Product added to cart successfully!');
+            } else {
+                alert('Product not found.');
+            }
         }
 
-        function buyNow() {
-            window.location.href = 'checkout.html';
-            // Add your checkout functionality here
+        function goBack() {
+            window.location.href = "index.html";
         }
+
+        window.onload = loadProductDetails;
     </script>
 </body>
-</html> 
+
+</html>

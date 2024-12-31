@@ -1,37 +1,28 @@
 /* General Styles */
 body {
+    background-color: #f4f4f4; /* Soft Light Gray */
+    color: #333333; /* Dark Gray Text */
     font-family: 'Playfair Display', serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f0e1;
-    color: #333;
+    line-height: 1.6;
 }
 
 /* Header */
 header {
-    background-color: #1e1e1e;
+    background-color: #000000; /* Black */
     padding: 20px;
     border-bottom: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-header .logo {
-    display: flex;
-    align-items: center;
-}
-
-header .logo h1 {
-    margin: 0;
-    color: #e0c097;
-    font-size: 36px;
-}
-
-header .name p {
-    color: #f5f0e1;
-    font-size: 18px;
-    margin: 0;
+header .logo h1, header .name p {
+    color: #ffffff; /* White Text */
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 nav ul {
@@ -39,40 +30,42 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 15px;
+    gap: 20px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #e0c097;
-    font-size: 16px;
+    color: #ffffff; /* White Text */
+    font-size: 18px;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    color: #d4af37; /* Gold */
 }
 
 /* Filters Section */
 .filters-section {
     padding: 20px;
-    background-color: #fff;
+    background-color: #ffffff; /* White */
     margin-bottom: 20px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
 .filters .toggle-button {
-    background-color: #180606;
+    background-color: #000000; /* Black */
     border: 1px solid #ccc;
     padding: 10px 20px;
-    font-size: 15px;
+    font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
-    color: #f5f0e1;
+    color: #ffffff; /* White Text */
     transition: background-color 0.3s;
 }
 
 .filters .toggle-button:hover {
-    background-color: #333;
+    background-color: #d4af37; /* Gold */
 }
 
 .filters .category-filters {
@@ -92,17 +85,17 @@ nav ul li a:hover {
 .filters ul li button {
     width: 100%;
     height: 50px;
-    font-size: 15px;
+    font-size: 16px;
     cursor: pointer;
-    background-color: #1e1e1e;
-    color: #f5f0e1;
+    background-color: #000000; /* Black */
+    color: #ffffff; /* White Text */
     border: none;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
 
 .filters ul li button:hover {
-    background-color: #444;
+    background-color: #d4af37; /* Gold */
 }
 
 /* Shop Section */
@@ -112,43 +105,51 @@ nav ul li a:hover {
 
 .products {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
 }
 
 .product {
     text-align: center;
     text-decoration: none;
     color: inherit;
-    margin: 10px; /* Add margin around each product */
-    border: 1px solid #e0c097; /* Optional: Add border for visual separation */
-    border-radius: 10px; /* Optional: Rounded corners */
-    overflow: hidden; /* Optional: Ensure content fits within border-radius */
-    background-color: #fff; /* Optional: Background color for product container */
+    margin: 10px;
+    border: 1px solid #dee2e6; /* Light Border */
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #ffffff; /* White */
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .product img {
     width: 100%;
-    height: 200px; /* Set a fixed height for uniformity */
-    object-fit: cover; /* Ensure images cover the area without distortion */
+    height: 250px;
+    object-fit: cover;
     transition: transform 0.3s;
 }
 
 .product-info img {
     max-width: 100%;
-    height: auto; /* Adjust height proportionally based on content */
+    height: auto;
 }
 
 .product p {
     margin: 10px 0;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .product button {
     padding: 10px;
     border: none;
-    background-color: #1e1e1e;
-    color: #f5f0e1;
+    background-color: #000000; /* Black */
+    color: #ffffff; /* White Text */
     cursor: pointer;
     border-radius: 5px;
     font-size: 16px;
@@ -156,7 +157,7 @@ nav ul li a:hover {
 }
 
 .product button:hover {
-    background-color: #333;
+    background-color: #d4af37; /* Gold */
     transform: scale(1.05);
 }
 
@@ -166,13 +167,14 @@ nav ul li a:hover {
 
 /* Footer */
 footer {
-    background-color: #000; /* Black background for visibility */
-    color: #f5f0e1; /* Light text color for contrast */
-    padding: 20px;
-    border-top: 1px solid #ccc; /* Light border for subtle separation */
+    background-color: #000000; /* Black */
+    color: #ffffff; /* White Text */
+    padding: 30px;
+    border-top: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap; /* Ensure footer content wraps on smaller screens */
+    flex-wrap: wrap;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .footer-content {
@@ -183,11 +185,13 @@ footer {
 
 .footer-content > div {
     width: 30%;
-    color: #f5f0e1; /* Ensure text color is readable against the black background */
+    color: #ffffff; /* White Text */
 }
 
 .footer-content h3 {
     margin-top: 0;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .footer-content ul {
@@ -200,11 +204,13 @@ footer {
 }
 
 .footer-content a {
-    color: #e0c097; /* Light gold color for links */
+    color: #d4af37; /* Gold */
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 .footer-content a:hover {
+    color: #ffffff; /* White */
     text-decoration: underline;
 }
 
@@ -218,9 +224,9 @@ footer {
     width: 80%;
     max-width: 600px;
     padding: 20px;
-    border: 1px solid #e0c097;
+    border: 1px solid #dee2e6;
     border-radius: 10px;
-    background-color: #fff;
+    background-color: #ffffff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
@@ -233,41 +239,41 @@ footer {
 /* Category Filters */
 .category-filters {
     display: none;
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 20px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
 
 .toggle-button {
-    background-color: #1e1e1e;
-    border: 1px solid #e0c097;
+    background-color: #000000; /* Black */
+    border: 1px solid #dee2e6;
     padding: 10px 20px;
     font-size: 15px;
     cursor: pointer;
     border-radius: 5px;
-    color: #f5f0e1;
+    color: #ffffff;
 }
 
 /* Contact Page */
 .contact {
     padding: 30px;
-    background-color: #fff;
+    background-color: #ffffff;
     margin: 20px auto;
-    width: 40%; /* Reduced width for a cleaner look */
+    width: 40%;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     text-align: center;
     font-family: 'Playfair Display', serif;
-    color: #333; /* Elegant text color */
+    color: #212529;
 }
 
 .contact h2 {
     margin-bottom: 20px;
-    color: #1e1e1e;
+    color: #000000; /* Black */
     font-family: 'Cormorant Garamond', serif;
     font-size: 26px;
-    letter-spacing: 1px; /* Slight letter spacing for elegance */
+    letter-spacing: 1px;
 }
 
 .contact form input,
@@ -275,9 +281,9 @@ footer {
     width: 90%;
     padding: 15px;
     margin-bottom: 20px;
-    border: 1px solid #e0c097;
+    border: 1px solid #dee2e6;
     border-radius: 5px;
-    background-color: #f5f0e1;
+    background-color: #f8f9fa;
     font-family: 'Playfair Display', serif;
     font-size: 16px;
 }
@@ -285,14 +291,14 @@ footer {
 .contact form input:focus,
 .contact form textarea:focus {
     outline: none;
-    border-color: #e0c097; /* Gold border on focus */
+    border-color: #d4af37; /* Gold */
 }
 
 .contact form button {
     padding: 15px 30px;
     border: none;
-    background-color: #1e1e1e;
-    color: #f5f0e1;
+    background-color: #000000; /* Black */
+    color: #ffffff;
     cursor: pointer;
     border-radius: 5px;
     font-size: 18px;
@@ -301,63 +307,61 @@ footer {
 }
 
 .contact form button:hover {
-    background-color: #e0c097;
-    color: #1e1e1e;
+    background-color: #d4af37; /* Gold */
+    color: #ffffff;
 }
 
 /* Sign In Page */
 .signin {
     padding: 30px;
-    background-color: #f5f0e1; /* Light luxury background */
+    background-color: #f8f9fa;
     margin: 30px auto;
     width: 40%;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     text-align: center;
-    font-family: 'Playfair Display', serif; /* Elegant font */
+    font-family: 'Playfair Display', serif;
 }
 
 .signin h2 {
     margin-top: 0;
-    color: #1e1e1e; /* Sophisticated text color */
+    color: #000000; /* Black */
     font-size: 24px;
 }
 
 .signin form {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Increased gap for better spacing */
+    gap: 15px;
 }
 
 .signin form input {
     padding: 15px;
-    border: 1px solid #e0c097; /* Goldish border for a touch of luxury */
-    border-radius: 8px; /* Rounded edges for a softer look */
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
     font-size: 16px;
 }
 
 .signin form button {
     padding: 15px;
     border: none;
-    background-color: #1e1e1e;
-    color: #f5f0e1;
+    background-color: #000000; /* Black */
+    color: #ffffff;
     cursor: pointer;
-    border-radius: 8px; /* Rounded button edges */
+    border-radius: 8px;
     font-size: 18px;
     transition: background-color 0.3s ease;
 }
 
 .signin form button:hover {
-    background-color: #e0c097;
-    color: #1e1e1e;
+    background-color: #d4af37; /* Gold */
+    color: #ffffff;
 }
-
-
 
 /* Register Page */
 .register {
     padding: 40px;
-    background-color: #fff;
+    background-color: #ffffff;
     margin: 40px auto;
     width: 50%;
     border-radius: 15px;
@@ -368,7 +372,7 @@ footer {
 
 .register h2 {
     margin-bottom: 30px;
-    color: #1e1e1e;
+    color: #000000; /* Black */
     font-size: 28px;
     font-weight: bold;
     letter-spacing: 1px;
@@ -383,9 +387,9 @@ footer {
 
 .register form input {
     padding: 15px;
-    border: 1px solid #e0c097;
+    border: 1px solid #dee2e6;
     border-radius: 8px;
-    background-color: #f5f0e1;
+    background-color: #f8f9fa;
     font-size: 16px;
     width: 80%;
     max-width: 400px;
@@ -393,14 +397,14 @@ footer {
 
 .register form input:focus {
     outline: none;
-    border-color: #e0c097;
+    border-color: #d4af37; /* Gold */
 }
 
 .register form button {
     padding: 15px 30px;
     border: none;
-    background-color: #1e1e1e;
-    color: #f5f0e1;
+    background-color: #000000; /* Black */
+    color: #ffffff;
     cursor: pointer;
     border-radius: 8px;
     font-size: 18px;
@@ -409,7 +413,7 @@ footer {
 }
 
 .register form button:hover {
-    background-color: #333;
+    background-color: #d4af37; /* Gold */
     transform: scale(1.05);
 }
 
@@ -419,12 +423,12 @@ footer {
 }
 
 .register p a {
-    color: #1e1e1e;
+    color: #000000; /* Black */
     text-decoration: none;
     font-weight: bold;
 }
 
 .register p a:hover {
     text-decoration: underline;
-    color: #e0c097;
-}
+    color: #d4af37; /* Gold */
+} 

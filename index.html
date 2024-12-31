@@ -6,6 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luxe Lane</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .cart-link {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .cart-count {
+            background: #000;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        /* Optional: Add this if you want to use a cart icon */
+        .cart-link::before {
+            content: "🛒";
+            font-size: 1.2rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -24,7 +50,7 @@
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="signin.html">Sign In</a></li>
                 <li><a href="register.html">Register</a></li>
-                
+                <li><a href="cart.html">Cart</a></li>
             </ul>
         </nav>
     </header>
@@ -56,13 +82,13 @@
                     <p>Rolex Oyster Perpetual Day-Date 31</p>
                     <p>$999</p>
                 </a>
-                
+
                 <a href="productdetails.html?product=airjordan" class="product" data-category="mens-fashion">
                     <img src="images.jpeg" alt="Air Jordan 1 Mid">
                     <p>Air Jordan 1 Mid</p>
                     <p>$800</p>
                 </a>
-                
+
                 <a href="productdetails.html?product=gucci" class="product" data-category="womens-fashion">
                     <img src="product-jpeg.jpg" alt="Gucci GG Supreme Bag">
                     <p>Gucci GG Supreme Bag</p>
@@ -168,8 +194,6 @@
         </div>
     </footer>
 
-    
-
     <script>
         function toggleFilters() {
             var filters = document.querySelector('.category-filters');
@@ -186,6 +210,51 @@
                 }
             });
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productElement = this.closest('.product');
+                    const product = {
+                        id: productElement.dataset.id,
+                        name: productElement.dataset.name,
+                        price: parseFloat(productElement.dataset.price),
+                        quantity: 1,
+                        image: productElement.dataset.image
+                    };
+
+                    // Check if product already exists in cart
+                    const existingProductIndex = cart.findIndex(item => item.id === product.id);
+
+                    if (existingProductIndex !== -1) {
+                        // Update quantity if product exists
+                        cart[existingProductIndex].quantity += 1;
+                    } else {
+                        // Add new product if it doesn't exist
+                        cart.push(product);
+                    }
+
+                    // Save cart to localStorage
+                    localStorage.setItem('cart', JSON.stringify(cart));
+
+                    // Update cart count in header
+                    updateCartCount();
+
+                    // Show confirmation message
+                    alert(`${product.name} added to cart!`);
+                });
+            });
+
+            function updateCartCount() {
+                const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+                document.querySelector('.cart-count').textContent = cartCount;
+            }
+
+            // Initialize cart count when page loads
+            updateCartCount();
+        });
     </script>
 </body>
 

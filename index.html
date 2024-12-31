@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Lane</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="Luxe lane.webp" style="height:100px;" alt="Luxe Lane Logo">
+            <h1>LUXE LANE</h1>
+        </div>
+        <div class="name">
+            <p>WHERE ELEGANCE MEETS CONVENIENCE</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="signin.html">Sign In</a></li>
+                <li><a href="register.html">Register</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Filters Section (Below Header) -->
+    <section class="filters-section">
+        <aside class="filters">
+            <button class="toggle-button" onclick="toggleFilters()">Shop by Category</button>
+            <div class="category-filters">
+                <ul>
+                    <li><button onclick="filterProducts('all')">See all</button></li>
+                    <li><button onclick="filterProducts('mobiles')">Mobiles, Computers</button></li>
+                    <li><button onclick="filterProducts('electronics')">TV, Appliances, Electronics</button></li>
+                    <li><button onclick="filterProducts('mens-fashion')">Men's Fashion</button></li>
+                    <li><button onclick="filterProducts('womens-fashion')">Women's Fashion</button></li>
+                </ul>
+            </div>
+        </aside>
+    </section>
+
+    <!-- Main Section -->
+    <main>
+        <!-- Shop Section -->
+        <section class="shop">
+            <div class="products">
+                <!-- First Row of Products -->
+                <a href="productdetails.html?product=rolex" class="product" data-category="mobiles">
+                    <img src="rolex.jpeg" alt="Rolex Oyster Perpetual Day-Date 31">
+                    <p>Rolex Oyster Perpetual Day-Date 31</p>
+                    <p>$999</p>
+                </a>
+                
+                <a href="productdetails.html?product=airjordan" class="product" data-category="mens-fashion">
+                    <img src="images.jpeg" alt="Air Jordan 1 Mid">
+                    <p>Air Jordan 1 Mid</p>
+                    <p>$800</p>
+                </a>
+                
+                <a href="productdetails.html?product=gucci" class="product" data-category="womens-fashion">
+                    <img src="product-jpeg.jpg" alt="Gucci GG Supreme Bag">
+                    <p>Gucci GG Supreme Bag</p>
+                    <p>$500</p>
+                </a>
+
+                <a href="productdetails.html?product=adidas" class="product" data-category="mens-fashion">
+                    <img src="images (3).jpeg" alt="Adidas SST Track Jacket">
+                    <p>Adidas SST Track Jacket</p>
+                    <p>$200</p>
+                </a>
+
+                <a href="productdetails.html?product=nike" class="product" data-category="electronics">
+                    <img src="images (1).jpeg" alt="Nike's self-lacing basketball shoes '77">
+                    <p>Nike's self-lacing basketball shoes '77</p>
+                    <p>$700</p>
+                </a>
+
+                <!-- Second Row of Products -->
+                <a href="productdetails.html?product=samsung" class="product" data-category="mobiles">
+                    <img src="Samsung Galaxy S21.webp" alt="Samsung Galaxy S21">
+                    <p>Samsung Galaxy S21</p>
+                    <p>$1200</p>
+                </a>
+
+                <a href="productdetails.html?product=polo" class="product" data-category="mens-fashion">
+                    <img src="Polo Ralph Lauren Shirt.webp" alt="Polo Ralph Lauren Shirt">
+                    <p>Polo Ralph Lauren Shirt</p>
+                    <p>$150</p>
+                </a>
+
+                <a href="productdetails.html?product=louisvuitton" class="product" data-category="womens-fashion">
+                    <img src="Louis Vuitton Tote Bag.jpg" alt="Louis Vuitton Tote Bag">
+                    <p>Louis Vuitton Tote Bag</p>
+                    <p>$1800</p>
+                </a>
+
+                <!-- Third Row of Products -->
+                <a href="productdetails.html?product=sony" class="product" data-category="electronics">
+                    <img src="Sony Bravia 65-inch TV.webp" alt="Sony Bravia 65-inch TV">
+                    <p>Sony Bravia 65-inch TV</p>
+                    <p>$2000</p>
+                </a>
+
+                <a href="productdetails.html?product=apple" class="product" data-category="mobiles">
+                    <img src="Apple iPhone 13 Pro.jpg" alt="Apple iPhone 13 Pro">
+                    <p>Apple iPhone 13 Pro</p>
+                    <p>$1300</p>
+                </a>
+
+                <a href="productdetails.html?product=chanel" class="product" data-category="womens-fashion">
+                    <img src="Chanel Classic Handbag.jpeg" alt="Chanel Classic Handbag">
+                    <p>Chanel Classic Handbag</p>
+                    <p>$3000</p>
+                </a>
+
+                <!-- Fourth Row of Products -->
+                <a href="productdetails.html?product=example" class="product" data-category="mobiles">
+                    <img src="example-product.jpg" alt="Example Product">
+                    <p>Example Product</p>
+                    <p>$1000</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="use-cases">
+                <h3>Use cases</h3>
+                <ul>
+                    <li>Private event invitation</li>
+                    <li>Luxury Concierge Services</li>
+                    <li>Personalized shopping</li>
+                    <li>VIP treatment</li>
+                    <li>Special showcases</li>
+                </ul>
+            </div>
+            <div class="explore">
+                <h3>Explore</h3>
+                <ul>
+                    <li>Design</li>
+                    <li>Principles</li>
+                    <li>Development</li>
+                    <li>Design systems</li>
+                    <li>Collaboration patterns</li>
+                </ul>
+            </div>
+            <div class="follow-us">
+                <h3>Follow us</h3>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+            <div class="contact-info">
+                <h3>Contact Info</h3>
+                <p>Email: contact@luxelane.com</p>
+                <p>Phone: +1-234-567-890</p>
+            </div>
+        </div>
+    </footer>
+
+    
+
+    <script>
+        function toggleFilters() {
+            var filters = document.querySelector('.category-filters');
+            filters.style.display = filters.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function filterProducts(category) {
+            var products = document.querySelectorAll('.product');
+            products.forEach(function (product) {
+                if (category === 'all') {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = product.getAttribute('data-category') === category ? 'block' : 'none';
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
